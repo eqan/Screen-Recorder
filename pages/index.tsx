@@ -231,7 +231,7 @@ const LandingPage: Page = () => {
                 className="text-700 text-2xl line-height-3 ml-0 md:ml-2"
                 style={{ maxWidth: "650px" }}
               >
-                We've supercharged the engine behind SDXL 0.9, ensuring
+                We have supercharged the engine behind SDXL 0.9, ensuring
                 lightning-fast generation times without compromising quality.
               </span>
             </div>
