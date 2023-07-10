@@ -4,7 +4,6 @@ import Link from "next/link";
 import { StyleClass } from "primereact/styleclass";
 import { Button } from "primereact/button";
 import { Ripple } from "primereact/ripple";
-import { Divider } from "primereact/divider";
 import AppConfig from "../layout/AppConfig";
 import { NodeRef, Page } from "../types/types";
 import { classNames } from "primereact/utils";
@@ -44,55 +43,70 @@ const LandingPage: Page = () => {
               className="pi pi-bars text-4xl cursor-pointer block lg:hidden text-700"
             ></i>
           </StyleClass>
-          <div
-            className={classNames(
-              "align-items-center surface-0 flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full left-0 px-6 lg:px-0 z-2",
-              { hidden: isHidden }
-            )}
-            style={{ top: "100%" }}
-          >
-            <ul className="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer">
-              <li>
-                <a
-                  href="#home"
-                  onClick={toggleMenuItemClick}
-                  className="p-ripple flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3"
-                >
-                  <span>Home</span>
-                  <Ripple />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#features"
-                  onClick={toggleMenuItemClick}
-                  className="p-ripple flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3"
-                >
-                  <span>Features</span>
-                  <Ripple />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#highlights"
-                  onClick={toggleMenuItemClick}
-                  className="p-ripple flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3"
-                >
-                  <span>Highlights</span>
-                  <Ripple />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#pricing"
-                  onClick={toggleMenuItemClick}
-                  className="p-ripple flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3"
-                >
-                  <span>Pricing</span>
-                  <Ripple />
-                </a>
-              </li>
-            </ul>
+          <div className="flex flex-row-reverse justify-content-between flex-wrap">
+            <div
+              className={classNames(
+                "align-items-center surface-0 flex-grow-1 hidden lg:flex absolute lg:static w-full left-0 px-6 lg:px-0 z-2",
+                { hidden: isHidden }
+              )}
+              style={{ top: "100%" }}
+            >
+              <ul className="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer flex-grow-1">
+                <li>
+                  <a
+                    href="#home"
+                    onClick={toggleMenuItemClick}
+                    className="p-ripple flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3"
+                  >
+                    <span>Home</span>
+                    <Ripple />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#features"
+                    onClick={toggleMenuItemClick}
+                    className="p-ripple flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3"
+                  >
+                    <span>Features</span>
+                    <Ripple />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#highlights"
+                    onClick={toggleMenuItemClick}
+                    className="p-ripple flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3"
+                  >
+                    <span>Highlights</span>
+                    <Ripple />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#pricing"
+                    onClick={toggleMenuItemClick}
+                    className="p-ripple flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3"
+                  >
+                    <span>Pricing</span>
+                    <Ripple />
+                  </a>
+                </li>
+              </ul>
+              <div className="flex justify-content-between lg:block border-top-1 pl-6 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
+                <Button
+                  label="Login"
+                  text
+                  rounded
+                  className="border-none font-light line-height-2 text-blue-500"
+                ></Button>
+                <Button
+                  label="Register"
+                  rounded
+                  className="border-none ml-5 font-light line-height-2 bg-blue-500 text-white"
+                ></Button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -142,19 +156,12 @@ const LandingPage: Page = () => {
             </div>
 
             <div className="col-12 lg:col-6 my-auto flex flex-column lg:align-items-end text-center lg:text-right">
-              <div
-                className="flex align-items-center justify-content-center bg-purple-200 align-self-center lg:align-self-end"
-                style={{
-                  width: "4.2rem",
-                  height: "4.2rem",
-                  borderRadius: "10px",
-                }}
-              >
-                <i className="pi pi-fw pi-mobile text-5xl text-purple-700"></i>
-              </div>
-              <h2 className="line-height-1 text-900 text-4xl font-normal">
+              <h6 className="pr-1 line-height-0 text-blue-500 text-900 text-xl font-normal">
+                Text to Image
+              </h6>
+              <h1 className="line-height-1 text-900 text-4xl font-bold">
                 Unparalleled Image Quality
-              </h2>
+              </h1>
               <span
                 className="text-700 text-2xl line-height-3 ml-0 md:ml-2"
                 style={{ maxWidth: "650px" }}
@@ -167,19 +174,12 @@ const LandingPage: Page = () => {
 
           <div className="grid my-8 pt-2 md:pt-8">
             <div className="col-12 lg:col-6 my-auto flex flex-column text-center lg:text-left lg:align-items-start">
-              <div
-                className="flex align-items-center justify-content-center bg-yellow-200 align-self-center lg:align-self-start"
-                style={{
-                  width: "4.2rem",
-                  height: "4.2rem",
-                  borderRadius: "10px",
-                }}
-              >
-                <i className="pi pi-fw pi-desktop text-5xl text-yellow-700"></i>
-              </div>
-              <h2 className="line-height-1 text-900 text-4xl font-normal">
+              <h6 className="pr-1 line-height-0 text-blue-500 text-900 text-xl font-normal">
+                Text to Image
+              </h6>
+              <h1 className="line-height-1 text-900 text-4xl font-bold">
                 Revolutionary Composition Capabilities:
-              </h2>
+              </h1>
               <span
                 className="text-700 text-2xl line-height-3 mr-0 md:mr-2"
                 style={{ maxWidth: "650px" }}
@@ -214,19 +214,12 @@ const LandingPage: Page = () => {
             </div>
 
             <div className="col-12 lg:col-6 my-auto flex flex-column lg:align-items-end text-center lg:text-right">
-              <div
-                className="flex align-items-center justify-content-center bg-purple-200 align-self-center lg:align-self-end"
-                style={{
-                  width: "4.2rem",
-                  height: "4.2rem",
-                  borderRadius: "10px",
-                }}
-              >
-                <i className="pi pi-fw pi-mobile text-5xl text-purple-700"></i>
-              </div>
-              <h2 className="line-height-1 text-900 text-4xl font-normal">
+              <h6 className="pr-1 line-height-0 text-blue-500 text-900 text-xl font-normal">
+                Text to Image
+              </h6>
+              <h1 className="line-height-1 text-900 text-4xl font-bold">
                 Enhanced Performance
-              </h2>
+              </h1>
               <span
                 className="text-700 text-2xl line-height-3 ml-0 md:ml-2"
                 style={{ maxWidth: "650px" }}
@@ -237,20 +230,13 @@ const LandingPage: Page = () => {
             </div>
           </div>
           <div className="grid my-8 pt-2 md:pt-8">
-            <div className="col-12 lg:col-6 my-auto flex flex-column text-center lg:text-left lg:align-items-start">
-              <div
-                className="flex align-items-center justify-content-center bg-yellow-200 align-self-center lg:align-self-start"
-                style={{
-                  width: "4.2rem",
-                  height: "4.2rem",
-                  borderRadius: "10px",
-                }}
-              >
-                <i className="pi pi-fw pi-desktop text-5xl text-yellow-700"></i>
-              </div>
-              <h2 className="line-height-1 text-900 text-4xl font-normal">
+            <div className="col-12 lg:col-6 my-auto flex flex-column text-center lg:text-left">
+              <h6 className="pr-1 line-height-0 text-blue-500 text-900 text-xl font-normal">
+                Text to Image
+              </h6>
+              <h1 className="line-height-1 text-900 text-4xl font-bold">
                 Transforming Industries
-              </h2>
+              </h1>
               <span
                 className="text-700 text-2xl line-height-3 mr-0 md:mr-2"
                 style={{ maxWidth: "650px" }}
