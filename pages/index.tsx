@@ -120,7 +120,7 @@ const LandingPage: Page = () => {
           }}
         >
           <div className="mx-4 md:mx-8 mt-0 md:mt-4">
-            <h1 className="text-6xl font-bold text-gray-900 line-height-2">
+            <h1 className="text-6xl font-bold text-blue-300 line-height-2">
               {/* <span className="font-light block">
                 Welcome to the future of visual creativity!
               </span> */}
