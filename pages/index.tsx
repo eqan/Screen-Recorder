@@ -121,16 +121,15 @@ const LandingPage: Page = () => {
         >
           <div className="mx-4 md:mx-8 mt-0 md:mt-4">
             <h1 className="text-6xl font-bold text-gray-900 line-height-2">
-              <span className="font-light block">
+              {/* <span className="font-light block">
                 Welcome to the future of visual creativity!
-              </span>
-              Introducing Stable Diffusion SDXL 0.9: Unleashing AI-Powered
-              Visual Innovation
+              </span> */}
+              Create amazing art with the power of AI!
             </h1>
             <p className="font-normal text-2xl line-height-3 md:mt-3 text-gray-700">
-              Brace yourself for a sneak peek into the world of limitless
-              creative possibilities that SDXL 0.9 brings to industries spanning
-              film, television, music, design, and manufacturing.
+              Unleash your inner artist and ride the wave of limitless
+              creativity with SDXL 0.9! Get ready to dive into a mind-blowing
+              journey across film, television, music, and design. Join us now!
             </p>
             <Button
               type="button"
@@ -211,7 +210,7 @@ const LandingPage: Page = () => {
                       borderRadius: "10px",
                     }}
                   >
-                    <i className="pi pi-fw pi-palette text-2xl text-cyan-700"></i>
+                    <i className="pi pi-fw pi-prime text-2xl text-cyan-700"></i>
                   </div>
                   <h5 className="mb-2 text-900">60+ AI models</h5>
                   <span className="text-600">
@@ -275,11 +274,11 @@ const LandingPage: Page = () => {
                       borderRadius: "10px",
                     }}
                   >
-                    <i className="pi pi-fw pi-map text-2xl text-indigo-700"></i>
+                    <i className="pi pi-fw pi-check-circle text-2xl text-indigo-700"></i>
                   </div>
-                  <h5 className="mb-2 text-900">Well Documented</h5>
+                  <h5 className="mb-2 text-900">Works for every use case</h5>
                   <span className="text-600">
-                    Non arcu risus quis varius quam quisque.
+                    Art creation, photo editing, design inspiration and more.
                   </span>
                 </div>
               </div>
@@ -288,6 +287,14 @@ const LandingPage: Page = () => {
         </div>
 
         <div id="highlights" className="py-4 px-4 lg:px-8 mx-0 my-6 lg:mx-8">
+          <div className="grid justify-content-center">
+            <div className="col-12 text-center mt-8 mb-4">
+              <h2 className="text-900 font-normal mb-2">
+                {"Here's a glimpse into what awaits you"}
+              </h2>
+              <span className="text-600 text-2xl"></span>
+            </div>
+          </div>
           <div className="grid mt-8 pb-2 md:pb-8">
             <div
               className="flex justify-content-center col-12 lg:col-6 bg-purple-100 p-0 flex-order-1 lg:flex-order-0"
@@ -323,7 +330,7 @@ const LandingPage: Page = () => {
                 Text to Image
               </h6>
               <h1 className="line-height-1 text-900 text-4xl font-bold">
-                Revolutionary Composition Capabilities:
+                Revolutionary Composition Capabilities
               </h1>
               <span
                 className="text-700 text-2xl line-height-3 mr-0 md:mr-2"
