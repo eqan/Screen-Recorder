@@ -180,9 +180,11 @@ const LandingPage: Page = () => {
                   >
                     <i className="pi pi-fw pi-bolt text-2xl text-yellow-700"></i>
                   </div>
-                  <h5 className="mb-2 text-900">Built for speed</h5>
+                  <h5 className="mb-2 text-900">
+                    Experience lightning-fast creativity
+                  </h5>
                   <span className="text-600">
-                    Generate up to 10 images in seconds.
+                    Generate stunning images in seconds
                   </span>
                 </div>
               </div>
@@ -212,9 +214,11 @@ const LandingPage: Page = () => {
                   >
                     <i className="pi pi-fw pi-prime text-2xl text-cyan-700"></i>
                   </div>
-                  <h5 className="mb-2 text-900">60+ AI models</h5>
+                  <h5 className="mb-2 text-900">
+                    Vast collection of AI models
+                  </h5>
                   <span className="text-600">
-                    From Stable Diffusion to custom community styles.
+                    Ranging from stable diffusion to unique community styles.
                   </span>
                 </div>
               </div>
@@ -246,7 +250,8 @@ const LandingPage: Page = () => {
                   </div>
                   <h5 className="mb-2 text-900">No downloads required</h5>
                   <span className="text-600">
-                    Magical AI tools right in your browser.
+                    Unleash the power of magical AI tools directly in your
+                    browser.
                   </span>
                 </div>
               </div>
@@ -276,9 +281,11 @@ const LandingPage: Page = () => {
                   >
                     <i className="pi pi-fw pi-check-circle text-2xl text-indigo-700"></i>
                   </div>
-                  <h5 className="mb-2 text-900">Works for every use case</h5>
+                  <h5 className="mb-2 text-900">
+                    Discover endless possibilities
+                  </h5>
                   <span className="text-600">
-                    Art creation, photo editing, design inspiration and more.
+                    Art creation, photo editing, design inspiration, and beyond
                   </span>
                 </div>
               </div>
@@ -309,7 +316,7 @@ const LandingPage: Page = () => {
 
             <div className="col-12 lg:col-6 my-auto flex flex-column lg:align-items-end text-center lg:text-right">
               <h6 className="pr-1 line-height-0 text-blue-500 text-900 text-xl font-normal">
-                Text to Image
+                Next level visuals
               </h6>
               <h1 className="line-height-1 text-900 text-4xl font-bold">
                 Unparalleled Image Quality
@@ -327,7 +334,7 @@ const LandingPage: Page = () => {
           <div className="grid my-8 pt-2 md:pt-8">
             <div className="col-12 lg:col-6 my-auto flex flex-column text-center lg:text-left lg:align-items-start">
               <h6 className="pr-1 line-height-0 text-blue-500 text-900 text-xl font-normal">
-                Text to Image
+                Compose like a Pro
               </h6>
               <h1 className="line-height-1 text-900 text-4xl font-bold">
                 Revolutionary Composition Capabilities
@@ -367,7 +374,7 @@ const LandingPage: Page = () => {
 
             <div className="col-12 lg:col-6 my-auto flex flex-column lg:align-items-end text-center lg:text-right">
               <h6 className="pr-1 line-height-0 text-blue-500 text-900 text-xl font-normal">
-                Text to Image
+                Powerful Speed
               </h6>
               <h1 className="line-height-1 text-900 text-4xl font-bold">
                 Enhanced Performance
@@ -384,7 +391,7 @@ const LandingPage: Page = () => {
           <div className="grid my-8 pt-2 md:pt-8">
             <div className="col-12 lg:col-6 my-auto flex flex-column text-center lg:text-left">
               <h6 className="pr-1 line-height-0 text-blue-500 text-900 text-xl font-normal">
-                Text to Image
+                Game Changing Creativity
               </h6>
               <h1 className="line-height-1 text-900 text-4xl font-bold">
                 Transforming Industries
