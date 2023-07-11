@@ -132,6 +132,12 @@ const LandingPage: Page = () => {
               creative possibilities that SDXL 0.9 brings to industries spanning
               film, television, music, design, and manufacturing.
             </p>
+            <Button
+              type="button"
+              label="Get Started"
+              rounded
+              className="text-xl border-none mt-3 bg-blue-500 font-normal line-height-3 px-3 text-white"
+            ></Button>
           </div>
           <div className="flex justify-content-center md:justify-content-end">
             <img
@@ -139,6 +145,145 @@ const LandingPage: Page = () => {
               alt="Hero Image"
               className="w-3 md:w-auto"
             />
+          </div>
+        </div>
+
+        <div id="features" className="py-4 px-4 lg:px-8 mt-5 mx-0 lg:mx-8">
+          <div className="grid justify-content-center">
+            <div className="col-12 text-center mt-8 mb-4">
+              <h2 className="text-900 font-normal mb-2">
+                A fully integrated suite of image-generation tools
+              </h2>
+              <span className="text-600 text-2xl"></span>
+            </div>
+
+            <div className="col-12 md:col-12 lg:col-3 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
+              <div
+                style={{
+                  height: "160px",
+                  padding: "2px",
+                  borderRadius: "10px",
+                  background:
+                    "linear-gradient(90deg, rgba(253, 228, 165, 0.2), rgba(187, 199, 205, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2), rgba(187, 199, 205, 0.2))",
+                }}
+              >
+                <div
+                  className="p-3 surface-card h-full"
+                  style={{ borderRadius: "8px" }}
+                >
+                  <div
+                    className="flex align-items-center justify-content-center bg-yellow-200 mb-3"
+                    style={{
+                      width: "3.5rem",
+                      height: "3.5rem",
+                      borderRadius: "10px",
+                    }}
+                  >
+                    <i className="pi pi-fw pi-bolt text-2xl text-yellow-700"></i>
+                  </div>
+                  <h5 className="mb-2 text-900">Built for speed</h5>
+                  <span className="text-600">
+                    Generate up to 10 images in seconds.
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-12 md:col-12 lg:col-3 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
+              <div
+                style={{
+                  height: "160px",
+                  padding: "2px",
+                  borderRadius: "10px",
+                  background:
+                    "linear-gradient(90deg, rgba(145,226,237,0.2),rgba(251, 199, 145, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2), rgba(172, 180, 223, 0.2))",
+                }}
+              >
+                <div
+                  className="p-3 surface-card h-full"
+                  style={{ borderRadius: "8px" }}
+                >
+                  <div
+                    className="flex align-items-center justify-content-center bg-cyan-200 mb-3"
+                    style={{
+                      width: "3.5rem",
+                      height: "3.5rem",
+                      borderRadius: "10px",
+                    }}
+                  >
+                    <i className="pi pi-fw pi-palette text-2xl text-cyan-700"></i>
+                  </div>
+                  <h5 className="mb-2 text-900">60+ AI models</h5>
+                  <span className="text-600">
+                    From Stable Diffusion to custom community styles.
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-12 md:col-12 lg:col-3 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
+              <div
+                style={{
+                  height: "160px",
+                  padding: "2px",
+                  borderRadius: "10px",
+                  background:
+                    "linear-gradient(90deg, rgba(187, 199, 205, 0.2),rgba(246, 158, 188, 0.2)), linear-gradient(180deg, rgba(145, 226, 237, 0.2),rgba(160, 210, 250, 0.2))",
+                }}
+              >
+                <div
+                  className="p-3 surface-card h-full"
+                  style={{ borderRadius: "8px" }}
+                >
+                  <div
+                    className="flex align-items-center justify-content-center bg-orange-200 mb-3"
+                    style={{
+                      width: "3.5rem",
+                      height: "3.5rem",
+                      borderRadius: "10px",
+                    }}
+                  >
+                    <i className="pi pi-fw pi-cloud text-2xl text-orange-700"></i>
+                  </div>
+                  <h5 className="mb-2 text-900">No downloads required</h5>
+                  <span className="text-600">
+                    Magical AI tools right in your browser.
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-12 md:col-12 lg:col-3 p-0 lg:pb-5 mt-4 lg:mt-0">
+              <div
+                style={{
+                  height: "160px",
+                  padding: "2px",
+                  borderRadius: "10px",
+                  background:
+                    "linear-gradient(90deg, rgba(145, 226, 237, 0.2), rgba(172, 180, 223, 0.2)), linear-gradient(180deg, rgba(172, 180, 223, 0.2), rgba(246, 158, 188, 0.2))",
+                }}
+              >
+                <div
+                  className="p-3 surface-card h-full"
+                  style={{ borderRadius: "8px" }}
+                >
+                  <div
+                    className="flex align-items-center justify-content-center bg-indigo-200"
+                    style={{
+                      width: "3.5rem",
+                      height: "3.5rem",
+                      borderRadius: "10px",
+                    }}
+                  >
+                    <i className="pi pi-fw pi-map text-2xl text-indigo-700"></i>
+                  </div>
+                  <h5 className="mb-2 text-900">Well Documented</h5>
+                  <span className="text-600">
+                    Non arcu risus quis varius quam quisque.
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
