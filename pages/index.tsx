@@ -419,6 +419,16 @@ const LandingPage: Page = () => {
           </div>
         </div>
 
+        <div id="highlights" className="py-4 px-4 lg:px-8 mx-0 my-6 lg:mx-8">
+          <div className="grid justify-content-center">
+            <div className="col-12 text-center mt-8 mb-4">
+              <Button className="text-xl border-none mt-3 bg-blue-500 font-normal line-height-3 px-3 text-white">
+                Get started today & unleash your potential!
+              </Button>
+            </div>
+          </div>
+        </div>
+
         <div className="py-4 px-4 mx-0 mt-8 lg:mx-8">
           <div className="grid justify-content-between">
             <div className="col-12 md:col-2" style={{ marginTop: "-1.5rem" }}>
