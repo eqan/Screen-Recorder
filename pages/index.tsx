@@ -180,9 +180,7 @@ const LandingPage: Page = () => {
                   >
                     <i className="pi pi-fw pi-bolt text-2xl text-yellow-700"></i>
                   </div>
-                  <h5 className="mb-2 text-900">
-                    Experience lightning-fast creativity
-                  </h5>
+                  <h5 className="mb-2 text-900">Lightning-fast creativity</h5>
                   <span className="text-600">
                     Generate stunning images in seconds
                   </span>
