@@ -9,6 +9,8 @@ import { Button } from "primereact/button";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { doc, setDoc, getFirestore, getDoc } from "firebase/firestore";
+import { addUser } from "../../../queries/User/createUser";
 
 const LoginPage = () => {
   const { layoutConfig } = useContext(LayoutContext);
@@ -22,13 +24,24 @@ const LoginPage = () => {
   const googleAuth = new GoogleAuthProvider();
   const login = async () => {
     const result = await signInWithPopup(auth, googleAuth);
+    const user = result.user;
+    createUser(user.email, user.displayName);
   };
   const [user, setUsers] = useAuthState(auth);
+  const db = getFirestore();
+
+  async function createUser(email: string | null, displayName: string | null) {
+    try {
+      addUser(email, displayName);
+    } catch (e) {
+      console.error(e);
+    }
+  }
 
   useEffect(() => {
     if (user != null) {
-      console.log(user);
       Cookies.set("accessToken", user["accessToken"], { expires: 1 });
+      router.push("/");
     }
   }, [user]);
 
