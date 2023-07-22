@@ -13,7 +13,6 @@ const LandingPage: Page = (access) => {
   }, []);
   return (
     <div>
-      <h1>Screen Recording</h1>
       <RecordingComponent />
     </div>
   );

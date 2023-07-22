@@ -38,7 +38,6 @@ const LoginPage = () => {
 
   useEffect(() => {
     if (user != null) {
-      Cookies.set("accessToken", user["accessToken"], { expires: 1 });
       router.push("/");
     }
   }, [user]);
