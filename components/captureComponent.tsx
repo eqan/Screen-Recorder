@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import fileUploaderToNFTStorage from "../utils/fileUploaderToNFTStorage";
 import { Button } from "primereact/button";
 import {
@@ -7,7 +7,11 @@ import {
   FiVideo,
   FiVideoOff,
   FiDownload,
+  FiCamera,
 } from "react-icons/fi";
+import { addVideo } from "../queries/Videos/createVideo";
+import { getAuth } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 interface HTMLVideoElementWithCaptureStream extends HTMLVideoElement {
   captureStream(frameRate?: number): MediaStream;
@@ -17,11 +21,18 @@ const RecordingComponent: React.FC = () => {
   const previewRef = useRef<HTMLVideoElementWithCaptureStream>(null);
   const recordingRef = useRef<HTMLVideoElement>(null);
   const downloadButtonRef = useRef<HTMLAnchorElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const logElementRef = useRef<HTMLDivElement>(null);
   const [isMuted, setIsMuted] = useState<boolean>(false);
+  const auth = getAuth();
+  const [user, setUsers] = useAuthState(auth);
 
   let recorder: MediaRecorder | null = null; // Add a variable for the recorder
   let data: Blob[] = []; // Move this outside to make it accessible to other functions
+
+  useEffect(() => {
+    console.log(user?.email);
+  }, [user]);
 
   const log = (msg: string) => {
     if (logElementRef.current) {
@@ -124,19 +135,21 @@ const RecordingComponent: React.FC = () => {
       .catch(log);
   };
 
-  const handleStopButtonClick = () => {
+  const handleStopButtonClick = async () => {
     if (previewRef.current && previewRef.current.srcObject) {
       if (recorder && recorder.state === "recording") {
         recorder.stop();
       }
       let recordedBlob = new Blob(data, { type: "video/webm" });
-      const url = fileUploaderToNFTStorage(
+      const url = await fileUploaderToNFTStorage(
         recordedBlob,
-        Date.now().toString(),
+        user?.email + "-" + Date.now().toString(),
         ".webm",
         "video/webm",
         "Just a video"
       );
+      console.log(user?.email);
+      await addVideo(user?.email, url);
       if (recordingRef.current) {
         recordingRef.current.src = URL.createObjectURL(recordedBlob);
       }
@@ -148,6 +161,57 @@ const RecordingComponent: React.FC = () => {
       log(
         `Successfully recorded ${recordedBlob.size} bytes of ${recordedBlob.type} media.`
       );
+    }
+  };
+
+  const handleScreenshotClick = async () => {
+    try {
+      const displayMediaOptions = {
+        video: {
+          cursor: "always",
+        },
+        audio: false,
+      };
+
+      // Ask the user to select a screen to capture.
+      const captureStream = await navigator.mediaDevices.getDisplayMedia(
+        displayMediaOptions
+      );
+      const videoTrack = captureStream.getVideoTracks()[0];
+
+      // Create a video element to play the capture stream.
+      const video = document.createElement("video");
+      video.srcObject = captureStream;
+      video.onloadedmetadata = () => {
+        video.play().then(() => {
+          // Now that the video is playing, draw the frame on the canvas.
+          if (canvasRef.current) {
+            const canvas = canvasRef.current;
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const ctx = canvas.getContext("2d");
+
+            if (ctx) {
+              ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+              const imageUrl = canvas.toDataURL("image/png");
+
+              const a = document.createElement("a");
+              a.href = imageUrl;
+              a.download = "screenshot.png";
+              setTimeout(() => {
+                // This delay will give the desktop application time to become the active window.
+                a.click();
+              }, 500);
+              document.body.appendChild(a);
+              document.body.removeChild(a);
+            }
+          }
+          // Stop the capture stream.
+          videoTrack.stop();
+        });
+      };
+    } catch (err) {
+      console.error("Error: " + err);
     }
   };
 
@@ -176,6 +240,14 @@ const RecordingComponent: React.FC = () => {
           backgroundColor: "#1a1a1a",
         }}
       >
+        <Button
+          icon={<FiCamera />} // replace with your camera icon
+          className="p-button-rounded p-button-success"
+          onClick={handleScreenshotClick}
+          style={{ margin: "0 10px" }}
+        />
+        <canvas ref={canvasRef} style={{ display: "none" }}></canvas>
+
         <Button
           icon={
             recorder && recorder.state === "recording" ? (

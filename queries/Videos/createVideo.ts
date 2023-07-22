@@ -1,8 +1,11 @@
 import { collection, addDoc, getFirestore } from "firebase/firestore";
 const db = getFirestore();
 
-export async function addVideo(email: string | null, url: string | null) {
-  if (email != null) {
+export async function addVideo(
+  email: string | null | undefined,
+  url: string | null
+) {
+  if (email != null && email != undefined) {
     try {
       const docRef = await addDoc(collection(db, "Videos"), {
         email: email,
@@ -12,5 +15,7 @@ export async function addVideo(email: string | null, url: string | null) {
     } catch (e) {
       console.error("Error adding document: ", e);
     }
+  } else {
+    console.log("Email is undefined or null");
   }
 }

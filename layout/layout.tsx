@@ -146,7 +146,7 @@ const Layout = ({ children }: ChildContainerProps) => {
   return (
     <React.Fragment>
       <Head>
-        <title>SDXL</title>
+        <title>Microslush</title>
         <meta charSet="UTF-8" />
         <meta
           name="description"
